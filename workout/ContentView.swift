@@ -10,76 +10,106 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    
+    @FetchRequest(entity: Region.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Region.order, ascending: true)])
+    private var regions: FetchedResults<Region>
+    
+    @FetchRequest(entity: Exercise.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Exercise.order, ascending: true)])
+    private var exercises: FetchedResults<Exercise>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                ForEach(regions) { region in
+                    Section(header: Text(region.name!)) {
+                        ForEach(exercises.filter({ $0.region == region }) , id: \.self) { exercise in
+                            NavigationLink(destination: ExerciseLogView(exercise: exercise)) {
+                                Text(exercise.name!)
+                            }
+                        }
+                        .onDelete(perform: { indexSet in deleteItems(region: region, at: indexSet)})
+                        .onMove(perform: { indices, newOffset in moveExercises(region: region, indices: indices, newOffset: newOffset)})
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddExerciseView()) {
+                        Image(systemName: "plus")
                     }
                 }
-            }
-            Text("Select an item")
+            }.navigationTitle("筋トレ種目")
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+    private func deleteItems(region: Region, at: IndexSet) {
+        // Regionのexercisesから削除
+        exerciseArray(region.exercises!).forEach { exercise in
+            if exercise.order > Int16(at.first!) {
+                exercise.order -= 1
             }
         }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+        let deleteExercise = exerciseArray(region.exercises!)[at.first!]
+        print(at.first!)
+        do {
+            viewContext.delete(deleteExercise)
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
+    
+    private func moveExercises(region: Region, indices: IndexSet, newOffset: Int) {
+        exerciseArray(region.exercises!).forEach { exercise in
+            print(exercise.name! + "：" + String(exercise.order))
+        }
+
+        if indices.first! < newOffset + 1 {
+            // Regionのexercisesから削除
+            exerciseArray(region.exercises!).forEach { exercise in
+                if exercise.order > Int16(indices.first!)  && exercise.order < Int16(newOffset){
+                    exercise.order -= 1
+                }
+            }
+            let moveExercise = exerciseArray(region.exercises!)[indices.first!]
+            moveExercise.order = Int16(newOffset - 1)
+        }
+
+        if indices.first! >= newOffset + 1 {
+            // Regionのexercisesから削除
+            exerciseArray(region.exercises!).forEach { exercise in
+                if exercise.order >= Int16(newOffset)  && exercise.order < Int16(indices.first!){
+                    exercise.order += 1
+                }
+            }
+            let moveExercise = exerciseArray(region.exercises!)[indices.first!]
+            moveExercise.order = Int16(newOffset)
+        }
+
+        print("移動元：" + String(indices.first!))
+        print("移動先：" + String(newOffset))
+        exerciseArray(region.exercises!).forEach { exercise in
+            print(exercise.name! + "：" + String(exercise.order))
+        }
+
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+   /// NSSet? → [Student]変換
+   private func exerciseArray(_ exercises: NSSet?) -> [Exercise] {
+       let array = exercises!.allObjects as! [Exercise]
+       return array.sorted(by: { $0.order < $1.order })
+   }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

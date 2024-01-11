@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9138A1CC2A9E313100A43B12 /* ExerciseLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9138A1CB2A9E313100A43B12 /* ExerciseLogView.swift */; };
+		9138A1CE2A9E325400A43B12 /* AddExerciseLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9138A1CD2A9E325400A43B12 /* AddExerciseLogView.swift */; };
+		916336272A965FD900136664 /* Record+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916336232A965FD900136664 /* Record+CoreDataClass.swift */; };
+		916336282A965FD900136664 /* Record+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916336242A965FD900136664 /* Record+CoreDataProperties.swift */; };
+		916336292A965FD900136664 /* Log+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916336252A965FD900136664 /* Log+CoreDataClass.swift */; };
+		9163362A2A965FD900136664 /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916336262A965FD900136664 /* Log+CoreDataProperties.swift */; };
+		9163362C2A97AB4B00136664 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9163362B2A97AB4B00136664 /* AddExerciseView.swift */; };
+		9163362E2A9B7E8200136664 /* ExerciseRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9163362D2A9B7E8100136664 /* ExerciseRecordView.swift */; };
 		917B7E132A91FE3F0087D583 /* workoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E122A91FE3F0087D583 /* workoutApp.swift */; };
 		917B7E152A91FE3F0087D583 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E142A91FE3F0087D583 /* ContentView.swift */; };
 		917B7E172A91FE430087D583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917B7E162A91FE430087D583 /* Assets.xcassets */; };
 		917B7E1A2A91FE430087D583 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 917B7E192A91FE430087D583 /* Preview Assets.xcassets */; };
 		917B7E1C2A91FE430087D583 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E1B2A91FE430087D583 /* Persistence.swift */; };
 		917B7E1F2A91FE430087D583 /* workout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E1D2A91FE430087D583 /* workout.xcdatamodeld */; };
+		917B7E312A9209720087D583 /* Region+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E2D2A9209720087D583 /* Region+CoreDataClass.swift */; };
+		917B7E322A9209720087D583 /* Region+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E2E2A9209720087D583 /* Region+CoreDataProperties.swift */; };
+		917B7E332A9209720087D583 /* Exercise+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E2F2A9209720087D583 /* Exercise+CoreDataClass.swift */; };
+		917B7E342A9209720087D583 /* Exercise+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E302A9209720087D583 /* Exercise+CoreDataProperties.swift */; };
+		917B7E372A9231DB0087D583 /* Type+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E352A9231DB0087D583 /* Type+CoreDataClass.swift */; };
+		917B7E382A9231DB0087D583 /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B7E362A9231DB0087D583 /* Type+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9138A1CB2A9E313100A43B12 /* ExerciseLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLogView.swift; sourceTree = "<group>"; };
+		9138A1CD2A9E325400A43B12 /* AddExerciseLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseLogView.swift; sourceTree = "<group>"; };
+		916336232A965FD900136664 /* Record+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataClass.swift"; sourceTree = "<group>"; };
+		916336242A965FD900136664 /* Record+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Record+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		916336252A965FD900136664 /* Log+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataClass.swift"; sourceTree = "<group>"; };
+		916336262A965FD900136664 /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9163362B2A97AB4B00136664 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
+		9163362D2A9B7E8100136664 /* ExerciseRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRecordView.swift; sourceTree = "<group>"; };
 		917B7E0F2A91FE3F0087D583 /* workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		917B7E122A91FE3F0087D583 /* workoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutApp.swift; sourceTree = "<group>"; };
 		917B7E142A91FE3F0087D583 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +45,12 @@
 		917B7E192A91FE430087D583 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		917B7E1B2A91FE430087D583 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		917B7E1E2A91FE430087D583 /* workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = workout.xcdatamodel; sourceTree = "<group>"; };
+		917B7E2D2A9209720087D583 /* Region+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataClass.swift"; sourceTree = "<group>"; };
+		917B7E2E2A9209720087D583 /* Region+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		917B7E2F2A9209720087D583 /* Exercise+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataClass.swift"; sourceTree = "<group>"; };
+		917B7E302A9209720087D583 /* Exercise+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		917B7E352A9231DB0087D583 /* Type+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataClass.swift"; sourceTree = "<group>"; };
+		917B7E362A9231DB0087D583 /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +67,16 @@
 		917B7E062A91FE3F0087D583 = {
 			isa = PBXGroup;
 			children = (
+				916336232A965FD900136664 /* Record+CoreDataClass.swift */,
+				916336242A965FD900136664 /* Record+CoreDataProperties.swift */,
+				916336252A965FD900136664 /* Log+CoreDataClass.swift */,
+				916336262A965FD900136664 /* Log+CoreDataProperties.swift */,
+				917B7E352A9231DB0087D583 /* Type+CoreDataClass.swift */,
+				917B7E362A9231DB0087D583 /* Type+CoreDataProperties.swift */,
+				917B7E2D2A9209720087D583 /* Region+CoreDataClass.swift */,
+				917B7E2E2A9209720087D583 /* Region+CoreDataProperties.swift */,
+				917B7E2F2A9209720087D583 /* Exercise+CoreDataClass.swift */,
+				917B7E302A9209720087D583 /* Exercise+CoreDataProperties.swift */,
 				917B7E112A91FE3F0087D583 /* workout */,
 				917B7E102A91FE3F0087D583 /* Products */,
 			);
@@ -57,6 +95,10 @@
 			children = (
 				917B7E122A91FE3F0087D583 /* workoutApp.swift */,
 				917B7E142A91FE3F0087D583 /* ContentView.swift */,
+				9138A1CD2A9E325400A43B12 /* AddExerciseLogView.swift */,
+				9138A1CB2A9E313100A43B12 /* ExerciseLogView.swift */,
+				9163362B2A97AB4B00136664 /* AddExerciseView.swift */,
+				9163362D2A9B7E8100136664 /* ExerciseRecordView.swift */,
 				917B7E162A91FE430087D583 /* Assets.xcassets */,
 				917B7E1B2A91FE430087D583 /* Persistence.swift */,
 				917B7E1D2A91FE430087D583 /* workout.xcdatamodeld */,
@@ -144,8 +186,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				917B7E1C2A91FE430087D583 /* Persistence.swift in Sources */,
+				917B7E312A9209720087D583 /* Region+CoreDataClass.swift in Sources */,
 				917B7E152A91FE3F0087D583 /* ContentView.swift in Sources */,
+				917B7E332A9209720087D583 /* Exercise+CoreDataClass.swift in Sources */,
+				916336282A965FD900136664 /* Record+CoreDataProperties.swift in Sources */,
+				9163362E2A9B7E8200136664 /* ExerciseRecordView.swift in Sources */,
+				917B7E322A9209720087D583 /* Region+CoreDataProperties.swift in Sources */,
+				916336272A965FD900136664 /* Record+CoreDataClass.swift in Sources */,
+				916336292A965FD900136664 /* Log+CoreDataClass.swift in Sources */,
+				9138A1CE2A9E325400A43B12 /* AddExerciseLogView.swift in Sources */,
+				9138A1CC2A9E313100A43B12 /* ExerciseLogView.swift in Sources */,
+				917B7E382A9231DB0087D583 /* Type+CoreDataProperties.swift in Sources */,
+				917B7E372A9231DB0087D583 /* Type+CoreDataClass.swift in Sources */,
+				9163362C2A97AB4B00136664 /* AddExerciseView.swift in Sources */,
+				917B7E342A9209720087D583 /* Exercise+CoreDataProperties.swift in Sources */,
 				917B7E132A91FE3F0087D583 /* workoutApp.swift in Sources */,
+				9163362A2A965FD900136664 /* Log+CoreDataProperties.swift in Sources */,
 				917B7E1F2A91FE430087D583 /* workout.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
